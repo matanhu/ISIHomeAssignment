@@ -1,0 +1,7 @@
+<app-todos-grid [todosList]="todos | async" (onImportantChanged)="onImportantChanged($event)"></app-todos-grid>
+
+<ul class="pages-list">
+    <li class="page-item" *ngFor="let page of pages">
+        <a class="page-btn" [routerLink]="['/', page]" routerLinkActive="router-link-active">{{page}}</a>
+    </li>
+</ul>

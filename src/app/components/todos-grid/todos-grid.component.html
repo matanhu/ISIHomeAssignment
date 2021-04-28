@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-sm-6 col-md-3 mb-3" *ngFor="let item of todosList">
+        <div class="card" [class.text-white]="item.important" [class.bg-primary]="item.important">
+            <div class="card-header">{{item.title}}</div>
+            <div class="card-body">
+                <div class="item--user-id">User ID: {{item.userId}}</div>
+                <div class="item--completed">Completed: {{item.completed ? 'Yes' : 'No'}}</div>
+                <div class="item--important">
+                    <label [for]="'important_' + item.id">Important: </label>
+                    <input [id]="'important_' + item.id" type="checkbox" [(ngModel)]="item.important" (ngModelChange)="importantChange(item)">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
